@@ -29,7 +29,7 @@ Im using Laragon as my PHP deploy environment. So I go to my `..\laragon\www`
 3. Set up Environment file
 
 `cp .env.example .env`
-Set the .env file and also create new database in your localhost
+Set the .env file
 
 4. Generate Key
 
