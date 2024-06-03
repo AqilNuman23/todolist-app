@@ -14,35 +14,35 @@ Its a project called ToDoList using Laravel framework.
 
 1. Clone the repository
 
-run on your command prompt:
+open your cmd and type
 
-"git clone https://github.com/username/repository-name.git"
-"cd repository-name"
+`git clone https://github.com/AqilNuman23/todolist-app.git`
+`cd todolist-app`
 
-2. Install dependencies
+3. Install dependencies
 
-"composer install"
+`composer install`
 
 3. Set up Environment file
 
-"cp .env.example .env"
-Also set the .env file
+`cp .env.example .env`
+Set the .env file and also create new database in your localhost
 
 4. Generate Key
 
-"php artisan key:generate"
+`php artisan key:generate`
 
 5. Set up Database
 
-"php artisan migrate"
+`php artisan migrate`
 
 6. Install node modules
 
-"npm install"
+`npm install`
 
 7. Start server and deploy
 
-"php artisan serve"
+`php artisan serve`
 
 <!-- <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
