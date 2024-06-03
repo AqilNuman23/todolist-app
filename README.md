@@ -1,4 +1,50 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## About the Assessment
+
+Its a project called ToDoList using Laravel framework.
+
+## How to set up
+
+### Prerequisites:
+
+1. Install PHP: Ensure you have PHP installed. this project requires PHP 7.3 or higher.
+2. Install Composer: Composer is a dependency manager for PHP.
+3. Install a Database: Install MySQL or MariaDB, and optionally phpMyAdmin for a GUI interface.
+
+### Steps:
+
+1. Clone the repository
+
+run on your command prompt:
+
+"git clone https://github.com/username/repository-name.git"
+"cd repository-name"
+
+2. Install dependencies
+
+"composer install"
+
+3. Set up Environment file
+
+"cp .env.example .env"
+Also set the .env file
+
+4. Generate Key
+
+"php artisan key:generate"
+
+5. Set up Database
+
+"php artisan migrate"
+
+6. Install node modules
+
+"npm install"
+
+7. Start server and deploy
+
+"php artisan serve"
+
+<!-- <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
@@ -63,4 +109,4 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT). -->
