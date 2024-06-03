@@ -14,7 +14,10 @@ Its a project called ToDoList using Laravel framework.
 
 1. Clone the repository
 
-open your cmd and type
+open your cmd and change directory `cd` to your prefered location
+then type this below.
+
+Im using Laragon as my PHP deploy environment. So I go to my `..\laragon\www`
 
 `git clone https://github.com/AqilNuman23/todolist-app.git`
 `cd todolist-app`
