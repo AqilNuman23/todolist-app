@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Task extends Model
+class Group extends Model
 {
     use HasFactory;
 
-    protected $table = 'tasks';
+    protected $table = 'groups';
 
-    protected $fillable = ['title', 'is_completed', 'due_date', 'user_id', 'group_id'];
+    protected $fillable = ['title', 'user_id'];
 
     protected $dates = ['created_at', 'updated_at'];
 }

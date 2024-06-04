@@ -14,6 +14,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         
@@ -24,6 +25,42 @@
             }
             html, body {
                 font-family: "Roboto", sans-serif !important;
+            }
+            .buttongp {
+                border: none;
+                color: white;
+                text-align: center;
+                text-decoration: none;
+                margin: 2px 2px;
+                cursor: pointer;
+            }
+
+            .buttonset {
+                background-color: white; 
+                color: black; 
+            }
+
+            .buttonset:hover {
+                background-color: #04AA6D;
+                color: white;
+            }
+
+            .btndel{
+                background-color: white; 
+                color: black;
+            }
+            .btndel:hover {
+                background-color: red; 
+                color: white;
+            }
+
+            .btnback{
+                background-color: white; 
+                color: black;
+            }
+            .btnback:hover {
+                background-color: rgb(108, 117, 125); 
+                color: white;
             }
         </style>
     </head>
@@ -108,33 +145,45 @@
         });
     }
 
-        window.updateTaskCompletion = function(checkbox, taskId) {
-            const isCompleted = checkbox.checked ? 1 : 0;
-            const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+    window.updateTaskCompletion = function(checkbox, taskId) {
+        const isCompleted = checkbox.checked ? 1 : 0;
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
-            fetch(`/tasks/${taskId}`, {
-                method: 'PATCH',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': csrfToken
-                },
-                body: JSON.stringify({ is_completed: isCompleted })
-            })
-            .then(response => {
-                if (!response.ok) {
-                    return response.text().then(text => {
-                        throw new Error(`Network response was not ok (Status: ${response.status}): ${text} for taskId: ${taskId}`);
-                    });
-                }
-                return response.json();
-            })
-            .then(data => {
+        console.log(`Sending request to update task ${taskId} completion status to ${isCompleted}`);
+
+        fetch(`/tasks/${taskId}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': csrfToken
+            },
+            body: JSON.stringify({ is_completed: isCompleted })
+        })
+        .then(response => {
+            if (!response.ok) {
+                return response.text().then(text => {
+                    throw new Error(`Network response was not ok (Status: ${response.status}): ${text}`);
+                });
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.success) {
                 console.log('Task completion status updated successfully:', data);
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-        }
+                const taskRow = checkbox.closest('tr');
+                if (isCompleted) {
+                    taskRow.classList.add('completed-task');
+                } else {
+                    taskRow.classList.remove('completed-task');
+                }
+            } else {
+                console.error('Error updating task completion status:', data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
     });
 
     </script>

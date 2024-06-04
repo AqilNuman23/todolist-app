@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TodolistController;
+use App\Http\Controllers\GroupController;
+use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +22,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', [TodolistController::class, 'retrieve'])
+Route::get('/dashboard', [TaskController::class, 'retrieve'])
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
@@ -28,12 +30,18 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::patch('/tasks/{id}', [TodolistController::class, 'update'])->name('tasks.update');
-    Route::post('/tasks', [TodolistController::class, 'add'])->name('tasks.add');
-    Route::patch('/tasks/title/{id}', [TodolistController::class, 'updateTaskTitle'])->name('tasks.updateTaskTitle'); 
-    Route::delete('/tasks/{id}', [TodolistController::class, 'deleteTask'])->name('tasks.delete');
-
+    
+    Route::get('/group{id}', [GroupController::class, 'show'])->name('group.show');
+    Route::post('/groups', [GroupController::class, 'create'])->name('groups.create');
+    Route::patch('/group/{id}', [GroupController::class, 'updateGroupTitle'])->name('tasks.updateGroupTitle');
+    Route::delete('/group/{id}', [GroupController::class, 'delete'])->name('groups.delete');
+    
+    Route::post('/tasks', [TaskController::class, 'create'])->name('tasks.create');
+    Route::patch('/tasks/title/{id}', [TaskController::class, 'updateTaskTitle'])->name('tasks.updateTaskTitle'); 
+    Route::patch('/tasks/{id}', [TaskController::class, 'update'])->name('tasks.update');
+    Route::delete('/tasks/{id}', [TaskController::class, 'delete'])->name('tasks.delete');
 });
+
 
 
 
