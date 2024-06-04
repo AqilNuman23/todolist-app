@@ -3,7 +3,7 @@
 
 ## About the Assessment
 
-Its a project called ToDoList using Laravel framework.
+Its a project called ToDoList using Laravel framework ver 9.0
 
 ## How to set up
 
