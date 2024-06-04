@@ -6,7 +6,7 @@ Its a project called ToDoList using Laravel framework.
 
 ### Prerequisites:
 
-1. Install PHP: Ensure you have PHP installed. this project requires PHP 7.3 or higher.
+1. Install PHP: Ensure you have PHP installed. this project requires PHP 8.1 or higher.
 2. Install Composer: Composer is a dependency manager for PHP.
 3. Install a Database: Install MySQL or MariaDB, and optionally phpMyAdmin for a GUI interface.
 
@@ -27,9 +27,16 @@ Im using Laragon as my PHP deploy environment. So I go to my `..\laragon\www`
 `composer install`
 
 3. Set up Environment file
-
-`cp .env.example .env`
+   
 Set the .env file
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=todolist
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
 4. Generate Key
 
