@@ -1,4 +1,66 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<<<<<<< HEAD
+
+# <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+
+## About the Assessment
+
+Its a project called ToDoList using Laravel framework.
+
+## How to set up
+
+### Prerequisites:
+
+1. Install PHP: Ensure you have PHP installed. this project requires PHP 8.1 or higher.
+2. Install Composer: Composer is a dependency manager for PHP.
+3. Install a Database: Install MySQL or MariaDB, and optionally phpMyAdmin for a GUI interface.
+
+### Steps:
+
+1. Clone the repository
+
+open your cmd and change directory `cd` to your prefered location
+then type this below.
+
+Im using Laragon as my PHP deploy environment. So I go to my `..\laragon\www`
+
+`git clone https://github.com/AqilNuman23/todolist-app.git`
+`cd todolist-app`
+
+3. Install dependencies
+
+`composer install`
+
+3. Set up Environment file
+
+Set the .env file
+
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=todolist
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+4. Generate Key
+
+`php artisan key:generate`
+
+5. Set up Database
+
+`php artisan migrate`
+
+6. Install node modules
+
+`npm install`
+
+7. Start server and deploy
+
+`php artisan serve`
+
+<!-- <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+>>>>>>> e379cbbd1d5c28a47b4b7db5cca3b13f2e4e9015
 
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
